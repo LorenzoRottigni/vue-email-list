@@ -22,6 +22,11 @@ window.addEventListener('DOMContentLoaded',()=>{
                         this.mails.push(...this.loadingMails)
                     }
                 }) 
+            },
+            loadMail(){
+                axios.get(this.url).then((response) => {
+                    this.mails.push(response.data.response)
+                })
             }
         },
         mounted(){
